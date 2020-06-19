@@ -8,10 +8,16 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
+    print("Inside the on message event listener")
+    print(message.content)
     if message.author == client.user:
         return
 
     if message.content.startswith('$hello'):
-        await message.channel.send('Hello!')
+        print("Inside the hello block")
+        await message.channel.send('WHAT THE FUCK DO YOU WANT BITCH!')
+        
+    elif 'u gay' in message.content.split('$hello')[1]:
+            await message.channel.send('no u')
 
-client.run('NzIzMjkwNjIzMDM3Mjc2MTgw.XuvvWQ.ZrgnvcOwBiZtAfgU4qZ3sPimo4U')
+client.run('NzIzNTk3MTMzOTU3MzAwMzA2.Xuz8Zw.fUh1We6vdjzhRNF1loNsywE8LLQ')
