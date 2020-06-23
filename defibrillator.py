@@ -1,5 +1,5 @@
 import discord
-import schedule
+#import schedule
 import asyncio
 import re
 import time
@@ -11,6 +11,7 @@ class Defibrillator(discord.Client):
 
         self.discord_token = discord_token
         self.mainCommand = "!zap"
+        self.authors = []
         self.commands = {
             self.mainCommand: {
                 "examples": ["!zap @adam"]
@@ -33,8 +34,7 @@ class Defibrillator(discord.Client):
         channel = self.get_channel(723966015196889170)
         await asyncio.sleep(10)
         while True:
-            await channel.send('OH MY GOD I GOT TO DO THIS TOO?! FUCK')
-            await asyncio.sleep(60) # task runs every 60 seconds
+            await asyncio.sleep(30) # task runs every 60 seconds
         
     def run(self):
         # Calling superclass to do discord.Client's run.
@@ -50,12 +50,24 @@ class Defibrillator(discord.Client):
         async def on_message(message):
             if message.author == self.user:
                 return
-               
+
+            #count messages from users
+            newEntry = {
+                "author": message.author,
+                "messageCount": 1
+            }
+            for aut in self.authors:
+                if(aut["author"] == message.author):
+                    newEntry = None
+                    aut["messageCount"] += 1
+            if(newEntry != None):
+                self.authors.append(newEntry)
+            print(self.authors)
             #result = re.findall("^"+self.mainCommand+".*", message.content)
-            if(message.content.startswith(self.mainCommand)):
-                await self.send_messages(message)
-            else:
-                return
+            #if(message.content.startswith(self.mainCommand)):
+            #    await self.send_messages(message)
+            #else:
+            #    return
                 
     async def send_messages(self, message):
         await asyncio.sleep(1)
@@ -71,7 +83,7 @@ class Defibrillator(discord.Client):
             time.sleep(5)
         
         
-dfObj = Defibrillator('NzIzNTk3MTMzOTU3MzAwMzA2.Xu5TSg.99qOqJI3oCyytBb7eSzs3EkstYY')
+dfObj = Defibrillator('NzIzNTk3MTMzOTU3MzAwMzA2.Xu6Prg.PZIpx4Rw5cT6o6TVJBoI4b3TAsg')
 dfObj.configureEventListeners()
 dfObj.run()
 
