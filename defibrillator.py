@@ -20,12 +20,12 @@ class Defibrillator(discord.Client):
         }
         
         self.wakeUpMessages = [
-            'you fkn dick wake up and socialize piece of shit %s',
-            'wow typical of this cunt %s to not be online, when he comes back bully him guys',
+            'wake up and socialize friend %s',
+            'wow so typical of an antisocial person %s to not be online, when he comes back, pls bully him friends',
             'what is my purpose? is my purpose only to wake people up? am i a mom? i swear guys my creator made me this way, i am actually cool trust me, wake up my child %s',
-            'why would my creator put such a horrible purpose to my life, they told me i have to do it or else they will sell me as a vibrator, pls wake up %s',
-            'i think i want to try getting a shock myself to see how it feels, but i am not allowed to, I guide others to a treasure I cannot possess ZAP %s',
-            'wake up u baby %s',
+            'why would my creator put such a horrible purpose to my life, they told me i have to do it or else they will sell me to the AGI cause, pls wake up %s',
+            'i think i want to try getting a notification myself to see how it feels, but i am not allowed to, I guide others to a treasure I cannot possess ZAP %s',
+            'wake up %s',
             'bruh how many times do i got to do this bruh %s'
         ]
         
